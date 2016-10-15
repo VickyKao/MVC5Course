@@ -42,7 +42,12 @@ namespace MVC5Course.Controllers
         public ActionResult Create()
         {
             ViewBag.OccupationId = new SelectList(db.Occupation, "OccupationId", "OccupationName");
-            return View();
+
+            //給預設值
+            var client = new Client() {
+                Gender = "M"
+            };
+            return View(client);
         }
 
         // POST: Clients/Create

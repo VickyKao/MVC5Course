@@ -44,6 +44,7 @@ namespace MVC5Course.Models
         [DataType(DataType.Date)] //只有chrome
         public Nullable<System.DateTime> DateOfBirth { get; set; }
         [DisplayName("信用評等")]
+        [Range(0, 9, ErrorMessage="{0} 必須介於0 ~ 9")]
         public Nullable<double> CreditRating { get; set; }
         public string XCode { get; set; }
         public Nullable<int> OccupationId { get; set; }

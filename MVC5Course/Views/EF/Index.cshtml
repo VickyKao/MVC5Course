@@ -1,7 +1,8 @@
 ﻿@model IEnumerable<MVC5Course.Models.Product>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create") | 
+    @Html.ActionLink("售價增加20%", "Add20Percent")
 </p>
 <table class="table">
     <tr>
@@ -24,6 +25,7 @@
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.ProductName)
+            @Html.ActionLink("加上驚嘆號", "Update", new { id = item.ProductId })
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Price)

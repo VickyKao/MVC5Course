@@ -37,8 +37,17 @@ namespace MVC5Course.Controllers
 
         public ActionResult Delete(int id) {
             var product = db.Product.Find(id);
-            db.Product.Remove(product);
-            db.SaveChanges();
+
+            db.OrderLine.RemoveRange(product.OrderLine);  //先刪除關連資料
+            db.Product.Remove(product);  //再刪除主要資料
+
+            #region 錯誤示範, 不可以使用
+            //foreach (var item in product.OrderLine.ToList()) {
+            //    db.OrderLine.Remove(item);
+            //    db.SaveChanges();
+            //}
+            #endregion
+            db.SaveChanges(); 
 
             return RedirectToAction("Index");
         }
@@ -70,6 +79,9 @@ namespace MVC5Course.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+
+
 
     }
 }

@@ -138,7 +138,7 @@ namespace MVC5Course.Controllers
             return View();
         }
 
-        //mvcp (HttpPost mvc)
+        //mvcpostaction4 (HttpPost mvc)
         [HttpPost]
         public ActionResult Login(ClientLoginViewModel client) {
 

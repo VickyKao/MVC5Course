@@ -11,8 +11,6 @@ namespace MVC5Course.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class Client
     {
@@ -23,28 +21,11 @@ namespace MVC5Course.Models
         }
     
         public int ClientId { get; set; }
-        [Required]
-        [StringLength(10, ErrorMessage="{0} 最大不可超過 {1} 個字元")]
-        [DisplayName("名字")]
         public string FirstName { get; set; }
-        [Required]
-        [StringLength(10, ErrorMessage="{0} 最大不可超過 {1} 個字元")]
-        [DisplayName("中間名")]
         public string MiddleName { get; set; }
-        [Required]
-        [StringLength(5, ErrorMessage="{0} 最大不可超過 {1} 個字元")]
-        [DisplayName("姓")]
         public string LastName { get; set; }
-        [Required]
-        [RegularExpression("[MF]", ErrorMessage="{0} 只能輸入 M 或 F")]
-        [DisplayName("性別")]
         public string Gender { get; set; }
-        [DisplayName("生日")]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}",ApplyFormatInEditMode=true)]
-        [DataType(DataType.Date)] //只有chrome
         public Nullable<System.DateTime> DateOfBirth { get; set; }
-        [DisplayName("信用評等")]
-        [Range(0, 9, ErrorMessage="{0} 必須介於0 ~ 9")]
         public Nullable<double> CreditRating { get; set; }
         public string XCode { get; set; }
         public Nullable<int> OccupationId { get; set; }

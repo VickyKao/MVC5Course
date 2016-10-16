@@ -80,7 +80,7 @@ namespace MVC5Course.Controllers
         // 詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ProductId,ProductName,Price,Active,Stock")] Product product)
+        public ActionResult Edit([Bind(Include = "ProductId,ProductName,Price,Active,Stock,Is刪除")] Product product)
         {
             if (ModelState.IsValid)
             {
@@ -112,7 +112,8 @@ namespace MVC5Course.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Product product = db.Product.Find(id);
-            db.Product.Remove(product);
+            //db.Product.Remove(product);
+            product.Is刪除 = true;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -95,12 +95,16 @@ namespace MVC5Course.Controllers
         // 詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ClientId,FirstName,MiddleName,LastName,Gender,DateOfBirth,CreditRating,XCode,OccupationId,TelephoneNumber,Street1,Street2,City,ZipCode,Longitude,Latitude,Notes")] Client client)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(client).State = EntityState.Modified;
+        public ActionResult Edit(int id, FormCollection form) {
+            //form傳入參數沒有使用，只是為了與同名方法做區隔
+
+            var client = db.Client.Find(id);  //找到要更新的資料
+            //TryUpdateModel取代ModelState.IsValid，同時binding及驗證
+            if (TryUpdateModel(client, null, null, new string[] { "IsAdmin" })) {
+                //排除掉IsAdmin
+                //db.Entry(client).State = EntityState.Modified;
                 db.SaveChanges();
+
                 return RedirectToAction("Index");
             }
             ViewBag.OccupationId = new SelectList(db.Occupation, "OccupationId", "OccupationName", client.OccupationId);

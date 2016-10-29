@@ -6,6 +6,7 @@ namespace MVC5Course.Models
 {   
 	public  class ProductRepository : EFRepository<Product>, IProductRepository
 	{
+        
         public override IQueryable<Product> All() {
             return base.All().Where(p=>p.Is§R°£ == false);  //Ä~©Ó¦ÛEFRepository
         }
@@ -18,6 +19,10 @@ namespace MVC5Course.Models
             return this.All().FirstOrDefault(p => p.ProductId == id);
         }
 
+        public override void Delete(Product product) {
+            product.Is§R°£ = true;
+        }
+        
 
 	}
 

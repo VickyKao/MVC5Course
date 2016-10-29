@@ -126,7 +126,8 @@ namespace MVC5Course.Controllers
             //Product product = db.Product.Find(id);
             Product product = repo.Find(id);
             //db.Product.Remove(product);
-            product.Is刪除 = true;
+            //product.Is刪除 = true;
+            repo.Delete(product);
             //db.SaveChanges();
             repo.UnitOfWork.Commit();
             return RedirectToAction("Index");

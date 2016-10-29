@@ -17,6 +17,7 @@ namespace MVC5Course.Controllers
         ProductRepository repo = RepositoryHelper.GetProductRepository();
 
         // GET: Products
+        //[Route("prod/list")]  //屬性路由(自訂網址結構)
         public ActionResult Index()
         {
             //var data = repo.All().OrderByDescending(p => p.ProductId).Take(10).ToList();
@@ -69,6 +70,7 @@ namespace MVC5Course.Controllers
         }
 
         // GET: Products/Edit/5
+        //[Route("prod/edit/{id}")]  //屬性路由(自訂網址結構)
         public ActionResult Edit(int? id)
         {
             if (id == null)

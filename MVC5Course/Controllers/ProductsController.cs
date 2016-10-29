@@ -19,11 +19,11 @@ namespace MVC5Course.Controllers
         // GET: Products
         public ActionResult Index()
         {
-            var data = repo.All().OrderByDescending(p => p.ProductId).Take(10).ToList();
-
+            //var data = repo.All().OrderByDescending(p => p.ProductId).Take(10).ToList();
+            var data2 = repo.Get所有資料_依據ProductId排序(10);
             //排序後只取10筆
             //var data = db.Product.OrderByDescending(p => p.ProductId).Take(10).ToList();
-            return View(data);
+            return View(data2);
         }
 
         // GET: Products/Details/5

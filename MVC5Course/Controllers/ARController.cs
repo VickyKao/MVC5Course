@@ -40,7 +40,6 @@ namespace MVC5Course.Controllers
 
         public ActionResult JsonTest() {
             db.Configuration.LazyLoadingEnabled = false;  //停用延遲載入
-
             var data = db.Product.OrderByDescending(p => p.ProductId).Take(10);
 
             return Json(data, JsonRequestBehavior.AllowGet);

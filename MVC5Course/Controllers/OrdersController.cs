@@ -15,11 +15,15 @@ namespace MVC5Course.Controllers
         private FabricsEntities db = new FabricsEntities();
 
         // GET: Orders
-        public ActionResult Index(int ClientId)
-        {
+        public ActionResult Index(int ClientId) {
             var order = db.Order.Include(o => o.Client).Where(p => p.ClientId == ClientId);
             return View(order.ToList());
         }
+
+        //public ActionResult Index() {
+        //    var order = db.Order.Include(o => o.Client);
+        //    return View(order.ToList());
+        //}
 
 
         protected override void Dispose(bool disposing)

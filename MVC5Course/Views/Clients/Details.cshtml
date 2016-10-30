@@ -141,11 +141,13 @@
     </dl>
 </div>
 
+@*/Orders/Index?ClientId=1*@
+
 <h3>Html.Action</h3>
 @Html.Action("Index", "Orders", new { ClientId = Model.ClientId})
 
 <h3>Html.Partial</h3>
-@Html.Partial("../Orders/Index", Model.Order.ToList())
+@Html.Partial("ClientOrders", Model.Order.ToList())
 
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ClientId }) |

@@ -179,6 +179,7 @@
     <Compile Include="ActionFilters\LocalDebugOnly.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MBController.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="ActionFilters\ShareData.cs" />
     <Compile Include="Controllers\VTController.cs" />
@@ -580,6 +581,7 @@
     <Content Include="Views\AR\_ViewStart.cshtml" />
     <Content Include="Views\Home\_ViewStart.cshtml" />
     <Content Include="Views\Products\_ViewStart.cshtml" />
+    <Content Include="Views\Orders\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

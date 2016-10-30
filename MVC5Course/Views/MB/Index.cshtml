@@ -8,7 +8,7 @@
 
 <h2>Index</h2>
 
-<h3>@ViewData["Temp1"]</h3>
+<h3>@a</h3>
 <hr />
 
 @using MVC5Course.Models.ViewModels
@@ -23,3 +23,7 @@
 <hr />
 
 @ViewBag.Temp2.FirstName @ViewBag.Temp2.LastName
+<hr />
+起始時間 : @ViewData["StrTime"].ToString()
+<br />
+結束時間 : @ViewData["EndTime"].ToString()

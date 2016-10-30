@@ -1,0 +1,17 @@
+﻿@{
+  Layout = "";
+  int[] data = new int[] { 1, 2, 3, 4, 5 };
+}
+@foreach (int item in data) {
+    @item
+}
+<br />
+@foreach (int item in data) {
+    @item @(" ")
+}
+<br />
+<ul>
+   @foreach (int item in data) {
+  <li>@item</li>
+}
+</ul>

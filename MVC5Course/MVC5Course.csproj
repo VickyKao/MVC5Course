@@ -576,6 +576,10 @@
     <Content Include="Views\VT\NewIndex.cshtml" />
     <Content Include="Views\Shared\_LayoutBootstrap.cshtml" />
     <Content Include="Views\VT\_ViewStart.cshtml" />
+    <Content Include="Views\MB\_ViewStart.cshtml" />
+    <Content Include="Views\AR\_ViewStart.cshtml" />
+    <Content Include="Views\Home\_ViewStart.cshtml" />
+    <Content Include="Views\Products\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

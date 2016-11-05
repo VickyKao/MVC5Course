@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MVC5Course.Models;
+using PagedList;
 
 namespace MVC5Course.Controllers
 {
@@ -18,13 +19,15 @@ namespace MVC5Course.Controllers
 
         // GET: Products
         //[Route("prod/list")]  //屬性路由(自訂網址結構)
-        public ActionResult Index()
+        public ActionResult Index(int pageNo=1)
         {
             //var data = repo.All().OrderByDescending(p => p.ProductId).Take(10).ToList();
-            var data2 = repo.Get所有資料_依據ProductId排序(10);
+            //var data2 = repo.Get所有資料_依據ProductId排序(10);
+            var data = repo.All().OrderBy(p => p.ProductId).AsQueryable();
+
             //排序後只取10筆
             //var data = db.Product.OrderByDescending(p => p.ProductId).Take(10).ToList();
-            return View(data2);
+            return View(data.ToPagedList(pageNo, 10));
         }
 
         // GET: Products/Details/5

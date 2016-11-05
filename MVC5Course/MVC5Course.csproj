@@ -580,15 +580,15 @@
     <Content Include="Views\VT\_ViewStart.cshtml" />
     <Content Include="Views\MB\_ViewStart.cshtml" />
     <Content Include="Views\AR\_ViewStart.cshtml" />
-    <Content Include="Views\Home\_ViewStart.cshtml" />
     <Content Include="Views\Products\_ViewStart.cshtml" />
     <Content Include="Views\Orders\Index.cshtml" />
     <Content Include="Views\Clients\ClientOrders.cshtml" />
     <Content Include="Views\Form\Index.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Client.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Client.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\CreditRating.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -20,12 +20,14 @@ namespace MVC5Course.Controllers
         }
 
         // GET: api/ProductsApi
+        [Route("prods")]
         public IQueryable<Product> GetProduct()
         {
             return db.Product;
         }
 
         // GET: api/ProductsApi/5
+        [Route("prods/{id}")]
         [ResponseType(typeof(Product))]
         public IHttpActionResult GetProduct(int id)
         {
@@ -117,5 +119,17 @@ namespace MVC5Course.Controllers
         {
             return db.Product.Count(e => e.ProductId == id) > 0;
         }
+        [Route("prods/{id}/orderlines")]
+        public IHttpActionResult GetProductOrderLine(int id) {
+            db.Configuration.ProxyCreationEnabled = false;
+            Product product = db.Product.Include("OrderLine").FirstOrDefault(p => p.ProductId == id);
+
+            if (product == null) {
+                return NotFound();
+            }
+
+            return Ok(product.OrderLine.ToList());
+        }
+
     }
 }
